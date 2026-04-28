@@ -20,14 +20,19 @@ const API_ENDPOINTS = [
 
 // Static fallback rates (guaranteed to work)
 const STATIC_RATES = {
-  'USD': { 'EUR': 0.92, 'GBP': 0.79, 'JPY': 149.50, 'INR': 83.10 },
-  'EUR': { 'USD': 1.09, 'GBP': 0.86, 'JPY': 162.50, 'INR': 90.50 },
-  'GBP': { 'USD': 1.27, 'EUR': 1.16, 'JPY': 189.20, 'INR': 105.30 },
-  'JPY': { 'USD': 0.0067, 'EUR': 0.0062, 'GBP': 0.0053, 'INR': 0.56 },
-  'INR': { 'USD': 0.012, 'EUR': 0.011, 'GBP': 0.0095, 'JPY': 1.79 }
+  'USD': { 'EUR': 0.92, 'GBP': 0.79, 'JPY': 149.50, 'INR': 83.10, 'NGN': 15000000, 'ZAR': 20000, 'ZWL': 80000 },
+  'EUR': { 'USD': 1.09, 'GBP': 0.86, 'JPY': 162.50, 'INR': 90.50, 'NGN': 16000000, 'ZAR': 25000, 'ZWL': 87000 },
+  'GBP': { 'USD': 1.27, 'EUR': 1.16, 'JPY': 189.20, 'INR': 105.30, 'NGN': 17000000, 'ZAR': 30000, 'ZWL': 100000 },
+  'JPY': { 'USD': 0.0067, 'EUR': 0.0062, 'GBP': 0.0053, 'INR': 0.56, 'NGN': 8, 'ZAR': 1, 'ZWL': 4 },
+  'INR': { 'USD': 0.012, 'EUR': 0.011, 'GBP': 0.0095, 'JPY': 1.79, 'NGN': 11, 'ZAR': 2, 'ZWL': 4 },
+  'NGN': { 'USD': 0.012, 'EUR': 0.011, 'GBP': 0.0095, 'JPY': 1.79, 'INR': 90, 'ZAR': 15, 'ZWL': 90 },
+  'ZAR': { 'USD': 0.012, 'EUR': 0.011, 'GBP': 0.0095, 'JPY': 1.79, 'INR': 90, 'NGN': 230, 'ZWL': 90 },
+  'ZWL': { 'USD': 0.012, 'EUR': 0.011, 'GBP': 0.0095, 'JPY': 1.79, 'INR': 90, 'NGN': 230, 'ZAR': 15 },
+  'YEN': { 'USD': 0.012, 'EUR': 0.011, 'GBP': 0.0095, 'JPY': 1.79, 'INR': 90, 'NGN': 230, 'ZAR': 15 },
+  'CFA': { 'USD': 0.012, 'EUR': 0.011, 'GBP': 0.0095, 'JPY': 1.79, 'INR': 90, 'NGN': 230, 'ZAR': 15 }
 }
 
-const POPULAR_CURRENCIES = ['USD', 'EUR', 'GBP', 'JPY', 'INR', 'AUD', 'CAD', 'CHF', 'CNY', 'SGD']
+const POPULAR_CURRENCIES = ['USD', 'EUR', 'GBP', 'JPY', 'INR', 'AUD', 'CAD', 'CHF', 'CNY', 'SGD', 'NGN', 'ZAR', 'ZWL', 'YEN', 'CFA']
 
 function CurrencyConverter() {
   const [amount, setAmount] = useState(1)
