@@ -1,129 +1,187 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.outercontainer{
+.outercontainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgb(241, 238, 233);
-  padding-top: 2rem;
- }
+  padding: 2rem 1rem;
+  min-height: calc(100vh - 60px);
+}
 
-.bmicontainer{
-  width: 50%;
+.bmicontainer {
+  width: 90%;
+  max-width: 500px;
   background-color: white;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 4px hsl(0, 0%, 70%);
-  min-width: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
- }
- h1{
-  text-align: center;
-  margin-bottom: 3rem;
- }
+}
 
- .inputgrp{
-  width: 70%;
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.inputgrp {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 0.5rem;
-  margin-bottom: 1rem;
- }
+  row-gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
 
- .inputgrp input{
+.inputgrp input {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.8rem;
   font-size: 1rem;
   border: 1px solid rgb(218, 218, 218);
   border-radius: 0.5rem;
- }
+}
 
- .calbtn{
-  padding: 0.5rem 1rem;
+.inputgrp label {
+  font-weight: 600;
+  color: #333;
+}
+
+.calbtn {
+  padding: 0.8rem 2rem;
   background-color: hsl(0, 0%, 10%);
   color: white;
   font-size: 1rem;
   font-weight: 600;
   border: none;
   border-radius: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   cursor: pointer;
- }
+  width: 100%;
+  max-width: 200px;
+}
 
- .calbtn:hover{
+.calbtn:hover {
   background-color: hsl(0, 0%, 0%);
-  transform: scale(1.02, 1.02);
- }
+  transform: scale(1.02);
+}
 
- .result{
+.result {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 600;
   color: #2b038a;
- }
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  width: 100%;
+}
 
- .btngrp{
-  width: 70%;
+.btngrp {
+  width: 100%;
   display: flex;
   justify-content: space-between;
- }
+  gap: 1rem;
+}
 
- .resetbtn{
-  padding: 0.5rem 1rem;
+.resetbtn {
+  padding: 0.8rem 2rem;
   background-color: white;
   color: hsl(0, 0%, 10%);
   font-size: 1rem;
   font-weight: 600;
   border: 1px solid gray;
   border-radius: 0.5rem;
-  margin-bottom: 2rem;
   cursor: pointer;
- }
+  flex: 1;
+}
 
- .resetbtn:hover{
+.resetbtn:hover {
   border: 1px solid hsl(0, 0%, 10%);
-  color: hsl(0, 0%, 0%);
-  transform: scale(1.02, 1.02);
- }
+  background: #f0f0f0;
+}
 
- .bmiInfo{
-  width: 50%;
+.bmiInfo {
+  width: 90%;
+  max-width: 500px;
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 0 0 4px hsl(0, 0%, 70%);
-  min-width: 450px;
-  padding: 1rem;
- }
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
 
- .bmiInfo h2{
+.bmiInfo h2 {
   text-align: center;
- }
+  margin-bottom: 1rem;
+}
 
- .infocontainer{
+.infocontainer {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
 
- }
-
- .bmiTitle{
+.bmiTitle {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
- }
+  padding: 1rem 0.5rem;
+  font-weight: bold;
+  border-bottom: 2px solid hsl(0, 0%, 80%);
+}
 
- .row{
+.row {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.8rem 0.5rem;
   border-bottom: 1px solid hsl(0, 0%, 80%);
- }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .bmicontainer, .bmiInfo {
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .outercontainer {
+    padding: 1rem 0.5rem;
+  }
+
+  .bmicontainer, .bmiInfo {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .calbtn, .resetbtn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .result {
+    font-size: 1.2rem;
+  }
+
+  .bmiTitle, .row {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.3rem;
+  }
+}
