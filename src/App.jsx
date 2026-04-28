@@ -8,12 +8,12 @@ function App() {
   return (
     <HashRouter>
       <nav>
-        <Link to="/">Bmi</Link>
+        <Link to="/Calculate-Anything">Bmi</Link>
         <Link to="/calculator">Simple Calculator</Link>
         <Link to="/percentage">Percentage</Link>
       </nav>
       <Routes>
-        <Route path="/" element={<Bmi />}/>
+        <Route path="/Calculate-Anything" element={<Bmi />}/>
         <Route path="/calculator" element={<Calculator />}/>
         <Route path="/percentage" element={<Percentage />}/>
       </Routes>
