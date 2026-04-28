@@ -1,4 +1,4 @@
-import {HashRouter, Routes, Route, Link} from "react-router-dom"
+import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
 import Bmi from "./BMI/BMI.jsx"
 import Calculator from "./Calculator/Calculator.jsx"
 import Percentage from "./Percentage/percentage.jsx"
@@ -8,7 +8,7 @@ import TemperatureConverter from "./Temperature/Temperature.jsx"
 function App() {
   
   return (
-    <HashRouter>
+    <BrowserRouter>
       <nav>
         <Link to="/">Bmi</Link>
         <Link to="/calculator">Simple Calculator</Link>
@@ -24,7 +24,7 @@ function App() {
         <Route path="/temperature" element={<TemperatureConverter />}/>
       </Routes>
          
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 
