@@ -72,15 +72,9 @@ h1 {
   transform: scale(1.02);
 }
 
-.result {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #2b038a;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-radius: 0.5rem;
-  width: 100%;
+.result.error {
+  background: #fee;
+  color: #c00;
 }
 
 .btngrp {

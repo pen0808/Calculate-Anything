@@ -2,64 +2,68 @@ import { useState } from "react"
 import './bmi.css'
 
 function Bmi(){
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
-  const [bmi, setBmi] = useState("");
+  const [weight, setWeight] = useState("")
+  const [height, setHeight] = useState("")
+  const [bmiValue, setBmiValue] = useState(null)
+  const [bmiCategory, setBmiCategory] = useState("")
 
   function handleWeight(e){
-    setWeight(e.target.value);
+    setWeight(e.target.value)
+    setBmiValue(null)
+    setBmiCategory("")
   }
-  
+
   function handleHeight(e){
-    setHeight(e.target.value);
+    setHeight(e.target.value)
+    setBmiValue(null)
+    setBmiCategory("")
   }
 
   function calbmi(){
-    const w = parseFloat(weight);
-    const h = parseFloat(height);
-    
+    const w = parseFloat(weight)
+    const h = parseFloat(height)
+
     if(!w || !h || w <= 0 || h <= 0){
-      setBmi(<div><p>Please enter valid weight and height</p></div>);
-      return;
+      setBmiValue(null)
+      setBmiCategory("Please enter valid weight and height")
+      return
     }
 
-    const heightm = h/100;
-    const bmiresult = (w/(heightm * heightm)).toFixed(1);
+    const heightm = h/100
+    const bmiresult = (w/(heightm * heightm)).toFixed(1)
 
-    let outcome = "";
+    let outcome = ""
 
     if(bmiresult < 18.5){
-      outcome = "You are underweight";
+      outcome = "You are underweight"
     }else if(bmiresult < 25){
-      outcome = "You are healthy";
+      outcome = "You are healthy"
     }else if(bmiresult < 30){
-      outcome = "You are overweight";
+      outcome = "You are overweight"
     }else if(bmiresult < 35){
-      outcome = "You are obese (Class 1)";
+      outcome = "You are obese (Class 1)"
     }else if(bmiresult < 40){
-      outcome = "You are obese (Class 2)";
+      outcome = "You are obese (Class 2)"
     }else if(bmiresult >= 40){
-      outcome = "You are obese (Class 3)";
+      outcome = "You are obese (Class 3)"
     }
 
-    setBmi(<div>
-            <p>Your BMI Result: {bmiresult}</p> 
-            <p>{outcome}</p>
-          </div>)
+    setBmiValue(bmiresult)
+    setBmiCategory(outcome)
   }
 
   function reset(){
-    setHeight("")
     setWeight("")
-    setBmi("")
+    setHeight("")
+    setBmiValue(null)
+    setBmiCategory("")
   }
-
 
   return(
     <div className="outercontainer">
       <div className="bmicontainer">
         <h1>Calculate your BMI</h1>
-        <div className="inputgrp">        
+        <div className="inputgrp">
           <div className="weight">
             <input type="number" placeholder="Weight (kg)" onChange={handleWeight} value={weight} />
           </div>
@@ -71,9 +75,19 @@ function Bmi(){
           <button className="calbtn" onClick={calbmi}>Calculate your BMI</button>
           <button className="resetbtn" onClick={reset}>Reset</button>
         </div>
-        
 
-        <div className="result">{bmi}</div>
+        {bmiValue && (
+          <div className="result">
+            <p>Your BMI Result: {bmiValue}</p>
+            <p>{bmiCategory}</p>
+          </div>
+        )}
+
+        {bmiCategory && !bmiValue && (
+          <div className="result error">
+            <p>{bmiCategory}</p>
+          </div>
+        )}
       </div>
 
       <div className="bmiInfo">

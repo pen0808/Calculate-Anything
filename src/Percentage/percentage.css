@@ -150,6 +150,13 @@
   text-align: center;
 }
 
+.error-msg {
+  color: #ff6b6b;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
 /* Tablet */
 @media (max-width: 768px) {
   .inner-container {
