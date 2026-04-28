@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route, Link} from "react-router-dom"
+import {HashRouter, Routes, Route, Link} from "react-router-dom"
 import Bmi from "./BMI/BMI.jsx"
 import Calculator from "./Calculator/Calculator.jsx"
 import Percentage from "./Percentage/percentage.jsx"
@@ -6,7 +6,7 @@ import Percentage from "./Percentage/percentage.jsx"
 function App() {
   
   return (
-    <BrowserRouter>
+    <HashRouter>
       <nav>
         <Link to="/">Bmi</Link>
         <Link to="/calculator">Simple Calculator</Link>
@@ -18,7 +18,7 @@ function App() {
         <Route path="/percentage" element={<Percentage />}/>
       </Routes>
          
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
