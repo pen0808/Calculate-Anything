@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.container{
+    background-color: rgba(235, 235, 235, 0.492);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.inner-container{
+    width: 90%;
+    max-width: 500px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.title{
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.inputgrp{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.inputs{
+    width: 48%;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input2{
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.input2 input{
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #444;
+    border-radius: 0.3rem;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+}
+
+.percent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.percent input{
+    flex: 1;
+}
+
+.percent span{
+    color: #aaa;
+    font-size: 1.1rem;
+}
+
+.btn-group{
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.btn-group button{
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    flex: 1;
+}
+
+.btn-group button:first-child{
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-group button:first-child:hover{
+    background-color: #0056b3;
+}
+
+.btn-group button:last-child{
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-group button:last-child:hover{
+    background-color: #545b62;
+}
+
+.answer{
+    width: 48%;
+    min-width: 250px;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.answer p:first-child{
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.answer p:last-child{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+}
